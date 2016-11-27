@@ -1,0 +1,23 @@
+<%= form_for([@predmet,@ca]) do |f| %>
+  <% if @ca.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(@ca.errors.count, "error") %> prohibited this ca from being saved:</h2>
+
+        <ul>
+            <% @ca.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+  <% end %>
+
+  <%= f.label "Trvanie" %><br>
+  <%= f.number_field :trvanie %><br>
+
+  <%= f.label "Text" %><br>
+  <%= f.text_area :text, size: "80x5" %><br>
+
+  <div class="actions">
+      <%= f.submit "Uložiť" %>
+  </div>
+<% end %>

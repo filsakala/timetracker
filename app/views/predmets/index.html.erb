@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Zoznam predmetov</h1>
+<div class="tabulka">
+  <table>
+    <thead>
+    <tr>
+      <th>Názov</th>
+      <th>Celkový čas</th>
+      <th colspan="3">Akcie</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @predmets.each do |predmet| %>
+        <tr>
+          <td><%= link_to predmet.nazov, predmet_cas_path(predmet) %></td>
+          <td><%= minuty_na_cas predmet.cas.sum(:trvanie) %></td>
+          <td><%= link_to 'Pridať čas', new_predmet_ca_path(predmet) %></td>
+          <td><%= link_to 'Upraviť', edit_predmet_path(predmet) %></td>
+          <td><%= link_to 'Vymazať', predmet, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        </tr>
+    <% end %>
+    <tr style="background-color: greenyellow">
+      <td>Spolu:</td>
+      <td><%= minuty_na_cas Predmet.joins(:cas).sum(:trvanie) %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+
+<%= link_to 'Nový predmet', new_predmet_path %>

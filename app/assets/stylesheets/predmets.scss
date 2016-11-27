@@ -1,0 +1,17 @@
+// Place all the styles related to the predmets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tabulka table { 
+    border-collapse: collapse; 
+    text-align: left; width: 100%; 
+} 
+.tabulka { font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: auto; border: 1px solid #006699; }
+.tabulka table td, .tabulka table th { padding: 2px 1px;  }
+.tabulka table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #00557F) );background:-moz-linear-gradient( center top, #006699 5%, #00557F 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F');background-color:#006699; color:#FFFFFF; font-size: 15px; font-weight: bold; border-left: 1px solid #0070A8; } 
+.tabulka table thead th:first-child { border: none; }.tabulka table tbody td { color: #00557F; border-left: 1px solid #BCC7CC;font-size: 12px;border-bottom: 1px solid #BCC7CC;font-weight: normal; }.tabulka table tbody .alt td { background: #E1EEf4; color: #00557F; }.tabulka table tbody td:first-child { border-left: none; }.tabulka table tbody tr:last-child td { border-bottom: none; }.tabulka table tfoot td div { border-top: 1px solid #006699;background: #E1EEf4;} .tabulka table tfoot td { padding: 0; font-size: 12px } .tabulka table tfoot td div{ padding: 2px; }.tabulka table tfoot td ul { margin: 0; padding:0; list-style: none; text-align: right; }.tabulka table tfoot  li { display: inline; }.tabulka table tfoot li a { text-decoration: none; display: inline-block;  padding: 2px 8px; margin: 1px;color: #FFFFFF;border: 1px solid #006699;-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #00557F) );background:-moz-linear-gradient( center top, #006699 5%, #00557F 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F');background-color:#006699; }.tabulka table tfoot ul.active, .tabulka table tfoot ul a:hover { text-decoration: none;border-color: #00557F; color: #FFFFFF; background: none; background-color:#006699;}div.dhtmlx_window_active, div.dhx_modal_cover_dv { position: fixed !important; }
+.tabulka tr:nth-child(odd){ background-color: #ffffff; }
+.tabulka tr:nth-child(even)    { background-color: #e1eef4; }
+.tabulka tr:hover { background-color: rgb(190, 220, 255);}
+.tabulka table thead a { color: #bbbbff;  }
+.tabulka table tbody a { color: #0077ff;  }

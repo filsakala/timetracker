@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<h1><%= @predmet.nazov %></h1>
+</p>
+<%= link_to 'Pridať čas', new_predmet_ca_path(@predmet) %>
+
+<h2>Pridané časy:</h2>
+<% if @cas.count>0 %>
+  <div class="tabulka">
+      <table>
+          <thead>
+              <tr>
+                  <th>Čas</th>
+                  <th>Text</th>
+                  <th>Čas pridania</th>
+                  <th colspan="2"></th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <% @cas.each do |cas| %>
+                <tr>
+                    <td><%= cas.trvanie %></td>
+                    <td><%= cas.text %></td>
+                    <td><%= datum_cas_sekundy cas.created_at %></td>
+                    <td><%= link_to 'Upraviť', edit_predmet_ca_path(cas.predmet, cas) %></td>
+                    <td><%= link_to 'Vymazať', predmet_ca_path(cas.predmet, cas), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+          </tbody>
+      </table>
+  </div>
+<% else %>
+  <p>K predmetu neboli pridané žiadne časy.</p>
+<% end %>
+
+<%= link_to 'Späť', predmets_path %>
